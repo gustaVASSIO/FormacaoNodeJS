@@ -1,0 +1,25 @@
+const exp = require("express");
+const app = exp();
+//dizendo para o express usar o ejs como leitor de html
+app.set("view engine", "ejs");
+//dizendo que minha aplicação utilizará arquivos staticos como HTML CSS e JavaScript
+app.use(exp.static('public'))
+
+app.get("/", (req, res) => {
+  const nome = "Dhara";
+  const mss = true;
+  const produtos = [
+    { nome: "Doritos", preco: 6.25 },
+    { nome: "Bolo", preco: 25.50 },
+    { nome: "Laranja", preco: 3.50 },
+    { nome: "Notebook", preco: 2000  },
+  ];
+  res.render("index", {
+    soma: (a, b) => a + b,
+    nome,
+    idade: 17,
+    mss,
+    produtos,
+  });
+});
+app.listen(5500);

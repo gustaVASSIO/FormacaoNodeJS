@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <%- include('partials/linksheader') %>    
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <h1 class="teste">Titulo</h1>
+    <div class="container">
+        <div class="card">
+            <div class="card-header"> 
+                <h1><%=pergunta.titulo%></h1> 
+            </div>
+            <div class="card-body">
+                <h4><%= pergunta.descricao %> </h4>
+            </div>
+            <div class="card-footer">
+                <form action="/salvaresposta" method="post">
+                    <label for="resposta" class="form-control"><strong>Sua resposta:</strong></label>
+                    <br>
+                    <textarea name="resposta" id="resposta" cols="30" rows="10" class="form-control"></textarea>
+                    <br>
+                    <input type="hidden" name="perguntaID" value="<%= pergunta.id %> ">
+                    <button class="btn btn-primary">Enviar Resposta</button>
+                    <hr>
+                    <h1>Respostas</h1>
+                    <hr>
+                    <%respostas.forEach(({resposta}) => {%> 
+                       <div class="card">
+                        <div class="card-body">
+                            <%= resposta %> 
+                        </div>
+                       </div>
+                    <% });%>  
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('partials/footer') %>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+         <%- include('partials/linksheader.ejs') %>
+        </head>
+        <body>
+            
+            <%- include('partials/navbar') %>
+            <div class="container"><!--Conteiner: centralize child components -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Make your question:</h3>
+        </div>
+        <div class="card-body">
+                <form method="post" action="/savequestion"><!--state a function of form and passing the router for a post -->
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title" placeholder="Inser here your title" required class="form-control">
+                    <label for="question">Question:</label>
+                    <textarea name="description" id="question" cols="30" rows="10" placeholder="Describe your question" class="form-control"></textarea>
+                    <button class="send-btn btn btn-primary">Add Question</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('partials/footer.ejs') %>
+</html>

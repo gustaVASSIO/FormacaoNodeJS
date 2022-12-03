@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/linksheader') %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+      <%perguntas.forEach(({titulo,id})=>{%>
+      <div class="card">
+        <div class="card-body">
+          <h2><%=titulo%></h2>
+        </div>
+        <div class="card-footer">
+          <a href="/ask/<%=id %> " class="btn btn-primary">Responder</a>
+            <!-- <button class="btn btn-primary">Responder</button> -->
+        </div>
+      </div>
+      <%})%>
+    </div>
+  </body>
+  <%- include('partials/footer') %>
+</html>
