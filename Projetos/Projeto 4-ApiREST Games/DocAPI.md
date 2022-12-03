@@ -1,4 +1,4 @@
-#API Games
+# API Games
 
 Esta API serve para realizar o CRUD de games.
 
